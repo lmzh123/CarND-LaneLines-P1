@@ -28,6 +28,8 @@ In order to avoid salt and pepper noise the image is lightly blurred using a Gau
 
 ![][image3]
 
+The next step in the pipeline is to perform canny edge detection whose low and high thresholds were raised to 150 and 225 correspondingly looking to avoid noisy edges by only retaining the most sharp edeges in the image, hopefully the ones corresponding to the lane lines.
+
 ![alt text][image4]
 ![alt text][image5]
 ![alt text][image6]
