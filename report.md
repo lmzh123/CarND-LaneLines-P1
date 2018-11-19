@@ -8,10 +8,6 @@
 
 This projects aims to develop a simple Computer Vision pipeline in order to the detect the lane lines seen by a camera located in a car's bumper.  
 
----
-
-### Reflection
-
 [image1]: ./screenshots/original.jpg "Original"
 [image2]: ./screenshots/gray.jpg "Grayscale"
 [image3]: ./screenshots/smoothed.jpg "Smoothed"
@@ -27,7 +23,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
-![alt text][image1 =250x]
+![alt text][image1|300x]
 ![alt text][image2]
 ![alt text][image3]
 ![alt text][image4]
