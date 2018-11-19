@@ -23,7 +23,7 @@ In order to draw a single line on the left and right lanes, I modified the draw_
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
-![](./screenshots/original.jpg)
+![](./screenshots/original.jpg | width=100)
 ![alt text][image2]
 ![alt text][image3]
 ![alt text][image4]
