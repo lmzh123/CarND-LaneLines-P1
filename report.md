@@ -12,8 +12,9 @@ This projects aims to develop a simple Computer Vision pipeline in order to the 
 [image2]: ./screenshots/gray.jpg "Grayscale"
 [image3]: ./screenshots/smoothed.jpg "Smoothed"
 [image4]: ./screenshots/canny.jpg "Canny"
-[image5]: ./screenshots/masked.jpg "Masked"
-[image6]: ./screenshots/lines.jpg "Hough"
+[image5]: ./screenshots/mask.jpg "Mask"
+[image6]: ./screenshots/masked.jpg "Masked"
+[image7]: ./screenshots/lines.jpg "Hough"
 
 ### 1. Lane lines detection pipeline.
 
@@ -28,9 +29,23 @@ In order to avoid salt and pepper noise the image is lightly blurred using a Gau
 
 ![][image3]
 
-The next step in the pipeline is to perform canny edge detection whose low and high thresholds were raised to 150 and 225 correspondingly looking to avoid noisy edges by only retaining the most sharp edeges in the image, hopefully the ones corresponding to the lane lines.
+The next step in the pipeline is to perform Canny edge detection whose low and high thresholds were raised to 150 and 225 correspondingly looking to avoid noisy edges by only retaining the most sharp ones in the image, hopefully the ones corresponding to the lane lines.
 
 ![alt text][image4]
+
+Using the function `region_of_interest()` the image obtained using Canny is maked with a polygonal region using the `cv2.bitwise_and()` function from OpenCV. The vertices of this region were determined as follows:
+
+| Point | X        | Y        |
+| ----- |:--------:| --------:|
+| 1     | 50       | h        |
+| 2     | (w/2)-50 | (h/2)+50 |
+| 3     | (w/2)+50 | (h/2)+50 |
+| 4     | w-50     | h        |
+
+Mask                       |  Masked edges image 
+:-------------------------:|:-------------------------:
+![][image5]                |  ![][image6]
+
 ![alt text][image5]
 ![alt text][image6]
 
