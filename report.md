@@ -46,11 +46,13 @@ Mask                       |  Masked edges image
 :-------------------------:|:-------------------------:
 ![][image5]                |  ![][image6]
 
-![alt text][image5]
-![alt text][image6]
+Finally from these resulting edges the lines are obtained using the Hough's transformation. OpenCV posses the `cv2.HoughLinesP()` which performs the transformation and determines which of these segments correspond to lines and which don't based on different parameters. From these parameters the *threshold* and *minLineLength* were tuned looking for consistent and long lines, this means raising both parameters experimentaly.
 
 
-### 2. Identify potential shortcomings with your current pipeline
+![alt text][image7]
+
+
+### 2. Potential shortcomings with your current pipeline
 
 
 One potential shortcoming would be what would happen when ... 
