@@ -17,13 +17,16 @@ This projects aims to develop a simple Computer Vision pipeline in order to the 
 
 ### 1. Lane lines detection pipeline.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+First step in the pipeline is to simply load the image and convert it to gray scale.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+Original image             |  Gray scale image 
+:-------------------------:|:-------------------------:
+![][image1]                |  ![][image1]
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+![alt text][image1]
 
-![](./screenshots/original.jpg | width=100)
+In order to avoid salt and pepper noise the image is lightly blurred using a Gaussian Filter with a 3x3 kernel. 
+
 ![alt text][image2]
 ![alt text][image3]
 ![alt text][image4]
