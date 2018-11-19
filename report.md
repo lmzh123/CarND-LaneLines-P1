@@ -17,18 +17,17 @@ This projects aims to develop a simple Computer Vision pipeline in order to the 
 
 ### 1. Lane lines detection pipeline.
 
-First step in the pipeline is to simply load the image and convert it to gray scale.
+First step in the pipeline is to simply load the image and convert it to gray scale for it to be easier to process and discar the color information which is not goint to be taken into account this time.
 
 Original image             |  Gray scale image 
 :-------------------------:|:-------------------------:
-![][image1]                |  ![][image1]
+![][image1]                |  ![][image2]
 
-![alt text][image1]
 
 In order to avoid salt and pepper noise the image is lightly blurred using a Gaussian Filter with a 3x3 kernel. 
 
-![alt text][image2]
-![alt text][image3]
+![][image3]
+
 ![alt text][image4]
 ![alt text][image5]
 ![alt text][image6]
