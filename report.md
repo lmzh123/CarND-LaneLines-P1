@@ -69,14 +69,22 @@ For matters of displaying the thickness of the line drawn is increased to 10.
 
 ### 3. Optional challenge
 
-Trying to improve the performance of this pipeline with the challenge video a small change was made that even tought was not a complete solution to the problem, it improved the results obtained. It can be noticed that the car's bumper can be seen by the camera and that bigger barriers are located at the side of the road 
+Trying to improve the performance of this pipeline with the challenge video a small change was made that even tought was not a complete solution to the problem, it improved the results obtained. It can be noticed that the car's bumper can be seen by the camera and that bigger barriers are located at the side of the road.
 
+To tackle this problem the lines where filtered according to their slope, in this case the lines that where close to be completely horizontal were discarded and this corresponds to avoid lines whith slopes between -0.1 and 0.1.
+
+```
+if ((y2-y1)/(x2-x1)) > 0.1:
+    right = np.vstack((right, np.array([x1, y1, x2, y2])))
+elif ((y2-y1)/(x2-x1)) < -0.1:
+    left = np.vstack((left, np.array([x1, y1, x2, y2])))
+```
 ### 4. Potential shortcomings
 
 This pipeline is highly tuned for this particular setup and as shown by the challenge video it could have problems with the following.
 
-* This algorithm is not robust enough to handle well when there are other lines in our region of interes besides the lane lines.
-* Rotations or traslations of the camera: It is highly dependant of getting the same kind of images everytime.
+* Overfitted: This algorithm is not robust enough to handle well when there are other lines in our region of interes besides the lane lines.
+* Rotations or traslations of the camera: It is highly dependant of getting the same kind of images everytime and any change in the region of interes could be a problem.
 * Light conditions: Edge detection can be a problem depending of the amount of light reflected by the road and also by the shadows that could be seen in or region of interest.
 
 ### 5. Suggest possible improvements to your pipeline
