@@ -58,6 +58,7 @@ Finally from these resulting edges the lines are obtained using the Hough's tran
 Using the slope of a line equation it can be determined which of the remaining lines correspond to both the left and right line using and if statement within the `draw_lines()` function. For instance if the slope of a line is positive it corresponds to the right line otherwise it belongs to the left line.
 
 ![](https://latex.codecogs.com/gif.latex?m%20%3D%20%5Cfrac%7By_%7B2%7D-y_%7B1%7D%7D%7Bx_%7B2%7D-x_%7B1%7D%7D)
+
  Once the left and right lines are grouped the average of such lines are obtained using the function `np.average()`, this average line's equation is calculated using the `np.polyfit()` equation making it possible to extrapolate this mean line to the same extents of the region of interest used before.
 
  Hough's lines             |  Mean extrapolated lines
