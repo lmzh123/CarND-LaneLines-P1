@@ -21,7 +21,7 @@ This projects aims to develop a simple Computer Vision pipeline in order to the 
 
 ### 1. Lane lines detection pipeline.
 
-First step in the pipeline is to simply load the image and convert it to gray scale for it to be easier to process and discar the color information which is not goint to be taken into account this time.
+First step in the pipeline is to simply load the image and convert it to gray scale for it to be easier to process and discard the color information which is not goint to be taken into account this time.
 
 Original image             |  Gray scale image 
 :-------------------------:|:-------------------------:
@@ -59,22 +59,27 @@ Using the slope of a line equation it can be determined which of the remaining l
 
 ![](https://latex.codecogs.com/gif.latex?m%20%3D%20%5Cfrac%7By_%7B2%7D-y_%7B1%7D%7D%7Bx_%7B2%7D-x_%7B1%7D%7D)
 
- Once the left and right lines are grouped the average of such lines are obtained using the function `np.average()`, this average line's equation is calculated using the `np.polyfit()` equation making it possible to extrapolate this mean line to the same extents of the region of interest used before.
+ Once the left and right lines are grouped the average of such lines are obtained using the function `np.average()`. From there the equations of these lines are calculated using the `np.polyfit()` function. Because of this first order equation it is possible to extrapolate this mean line to the same extents of the region of interest used before.
 
  Hough's lines             |  Mean extrapolated lines
 :-------------------------:|:-------------------------:
 ![][image8]                |  ![][image9]
 
+For matters of displaying the thickness of the line drawn is increased to 10.
 
-### 2. Potential shortcomings with your current pipeline
+### 3. Optional challenge
 
+Trying to improve the performance of this pipeline with the challenge video a small change was made that even tought was not a complete solution to the problem, it improved the results obtained. It can be noticed that the car's bumper can be seen by the camera and that bigger barriers are located at the side of the road 
 
-One potential shortcoming would be what would happen when ... 
+### 4. Potential shortcomings
 
-Another shortcoming could be ...
+This pipeline is highly tuned for this particular setup and as shown by the challenge video it could have problems with the following.
 
+* This algorithm is not robust enough to handle well when there are other lines in our region of interes besides the lane lines.
+* Rotations or traslations of the camera: It is highly dependant of getting the same kind of images everytime.
+* Light conditions: Edge detection can be a problem depending of the amount of light reflected by the road and also by the shadows that could be seen in or region of interest.
 
-### 3. Suggest possible improvements to your pipeline
+### 5. Suggest possible improvements to your pipeline
 
 A possible improvement would be to ...
 
